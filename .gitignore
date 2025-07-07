@@ -1,0 +1,104 @@
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+*.log
+
+# Visual Studio files
+.vs/
+.vscode/
+
+# NuGet packages
+*.nupkg
+# The packages folder can be ignored if you use package restore
+**/packages/*
+!**/packages/build/
+!**/packages/repositories.config
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# StyleCop
+StyleCopReport.xml
+
+# Files built by Visual Studio
+*_i.c
+*_p.c
+*_h.h
+*.ilk
+*.meta
+*.obj
+*.iobj
+*.pch
+*.pdb
+*.ipdb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tmp
+*.tmp_proj
+*.log
+*.vspscc
+*_i.asm
+*_p.asm
+*.cachefile
+
+# Others
+*.dbmdl
+*.bak
+*.backup
+*.swp
+*.swo
+
+# Rider
+.idea/
+*.sln.iml
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# VS Code settings
+.vscode/
+
+# Local history for Visual Studio
+.localhistory/
+
+# Node.js
+node_modules/
+
+# Mac system files
+.DS_Store
+
+# Python virtual environments
+venv/
+ENV/
+env/
