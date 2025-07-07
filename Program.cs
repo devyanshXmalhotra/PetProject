@@ -103,7 +103,6 @@ class Program
                 case "3":
                     for (int i = 0; i < animalCount; i++)
                     {
-                        // Age
                         if (string.IsNullOrWhiteSpace(ourAnimals[i, 2]) || ourAnimals[i, 2].ToLower() == "unknown")
                         {
                             Console.WriteLine($"\nAnimal ID {ourAnimals[i, 0]} ({ourAnimals[i, 1]}) is missing age.");
@@ -125,22 +124,25 @@ class Program
                 case "4":
                     for (int i = 0; i < animalCount; i++)
                     {
-                        if (string.IsNullOrWhiteSpace(ourAnimals[i, 5]) || ourAnimals[i, 5].ToLower() == "unknown")
+                        string newNickname;
+                        do
                         {
-                            Console.WriteLine($"\nAnimal ID {ourAnimals[i, 0]} ({ourAnimals[i, 1]}) is missing nickname.");
-                            Console.Write("Enter nickname: ");
-                            string newNickname = Console.ReadLine();
-                            ourAnimals[i, 5] = string.IsNullOrWhiteSpace(newNickname) ? "unknown" : newNickname;
-                        }
-                        if (string.IsNullOrWhiteSpace(ourAnimals[i, 4]) || ourAnimals[i, 4].ToLower() == "unknown")
+                            Console.WriteLine($"\nAnimal ID {ourAnimals[i, 0]} ({ourAnimals[i, 1]}) - Current nickname: {ourAnimals[i, 5]}");
+                            Console.Write("Enter nickname (cannot be blank or 'unknown'): ");
+                            newNickname = Console.ReadLine();
+                        } while (string.IsNullOrWhiteSpace(newNickname) || newNickname.Trim().ToLower() == "unknown");
+                        ourAnimals[i, 5] = newNickname;
+
+                        string newPersonality;
+                        do
                         {
-                            Console.WriteLine($"\nAnimal ID {ourAnimals[i, 0]} ({ourAnimals[i, 1]}) is missing personality description.");
-                            Console.Write("Enter personality description: ");
-                            string newPersonality = Console.ReadLine();
-                            ourAnimals[i, 4] = string.IsNullOrWhiteSpace(newPersonality) ? "unknown" : newPersonality;
-                        }
+                            Console.WriteLine($"\nAnimal ID {ourAnimals[i, 0]} ({ourAnimals[i, 1]}) - Current personality: {ourAnimals[i, 4]}");
+                            Console.Write("Enter personality description (cannot be blank or 'unknown'): ");
+                            newPersonality = Console.ReadLine();
+                        } while (string.IsNullOrWhiteSpace(newPersonality) || newPersonality.Trim().ToLower() == "unknown");
+                        ourAnimals[i, 4] = newPersonality;
                     }
-                    Console.WriteLine("All animal nicknames and personality descriptions are now complete (or marked as unknown).");
+                    Console.WriteLine("All animal nicknames and personality descriptions are now complete.");
                     break;
 
                 case "5":
@@ -152,9 +154,13 @@ class Program
                         if (ourAnimals[i, 0] == editAgeId)
                         {
                             Console.WriteLine($"Current age: {ourAnimals[i, 2]}");
-                            Console.Write("Enter new age: ");
-                            string newAge = Console.ReadLine();
-                            ourAnimals[i, 2] = string.IsNullOrWhiteSpace(newAge) ? ourAnimals[i, 2] : newAge;
+                            string newAge;
+                            do
+                            {
+                                Console.Write("Enter new age (cannot be blank or 'unknown'): ");
+                                newAge = Console.ReadLine();
+                            } while (string.IsNullOrWhiteSpace(newAge) || newAge.Trim().ToLower() == "unknown");
+                            ourAnimals[i, 2] = newAge;
                             Console.WriteLine("Age updated.");
                             foundAge = true;
                             break;
